@@ -1,6 +1,6 @@
 
 okta_client_id = 'xxxx'
-okta_ssws_token = 'xxx'
+
 okta_api_integration_secret = 'xxx-xxx-xxx'
 
 authorize_url = 'https://dev-xxx.okta.com/oauth2/default/v1/authorize'
