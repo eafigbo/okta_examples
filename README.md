@@ -18,7 +18,7 @@ It consists of the following examples:
 Before running these examples, you will need the following:
 
 * An Okta Developer Account, you can sign up for one at https://developer.okta.com/signup/.
-* At least one Okta Application, configured for Web mode. This is done from the Okta Developer Console and you can find instructions [here][OIDC WEB Setup Instructions].  
+* At least one Okta Application, configured for Web mode. This is done from the Okta Developer Console and you can find instructions [here](https://help.okta.com/en-us/Content/Topics/Apps/Apps_App_Integration_Wizard_OIDC.htm).  
 
 ## Running These Examples
 To run these examples, you first need to clone this repo and then enter into this directory:
