@@ -1,11 +1,11 @@
-okta_client_id = '0oa7qrlhx3vNja5TD5d7'
-okta_client_secret ='ijNt9AOEnldIZ_9tl4c8gAqg8X4au3Gx6z0hwwtL'
+okta_client_id = 'xxx'
+okta_client_secret ='xxx'
 
-oauth_authorize_url = 'https://dev-94568396.okta.com/oauth2/v1/authorize'
+oauth_authorize_url = 'https://dev-xxx.okta.com/oauth2/v1/authorize'
 
-oauth_access_token_url = 'https://dev-94568396.okta.com/oauth2/v1/token'
+oauth_access_token_url = 'https://dev-xxx.okta.com/oauth2/v1/token'
 
 
-api_url_base = 'https://dev-94568396.okta.com/'
+api_url_base = 'https://dev-xxx.okta.com/'
 
 base_url = 'http://localhost:5000/'
