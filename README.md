@@ -33,4 +33,4 @@ Then install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-Follow the instructions in each project'sREADME to run each example
+Follow the instructions in each project's README to run each example
