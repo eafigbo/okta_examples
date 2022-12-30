@@ -9,7 +9,6 @@ Before running these examples, see instructions in [okta_examples README](../REA
 
 Now you need to gather the following information from the Okta Developer Console that belongs to your web application:
 - **Client ID and Client Secret**  - The client ID and secret of the Web application that you created earlier. This identifies the application that tokens will be minted for.
-- To test the Interaction Code flow with Okta Identity Engine, you need to configure your org to support interaction code flow. See the instructions [here](https://developer.okta.com/docs/guides/implement-grant-type/interactioncode/main/#verify-that-the-interaction-code-grant-type-is-enabled)
 - Enable/Configure your org to support the new API Service Integrations by following the instructions [here](https://developer.okta.com/docs/guides/build-api-integration/main/)
 
 
