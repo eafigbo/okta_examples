@@ -12,3 +12,25 @@ It consists of the following examples:
 |[okta_api_access](/okta_api_access)   |An example for accessing and protecting APIs with Okta. Contains an client that accesses authenticates with Okta and access a dummy API Resource Server that is protected by Okta, can be used to test API Access protection with Okta|
 |[okta_api_integration](/okta_api_integration)| An example for Okta's API Service Integrations that allow you access Okta APIs using a service account|
 |[okta_widget_login](/okta_widget_login)| An example that tests the use of Okta's widget to add authentication to your web app using the widget in redirect mode or embeded mode. This also tests the new propriety Interaction code flow| 
+
+## Prerequisites
+
+Before running these examples, you will need the following:
+
+* An Okta Developer Account, you can sign up for one at https://developer.okta.com/signup/.
+* At least one Okta Application, configured for Web mode. This is done from the Okta Developer Console and you can find instructions [here][OIDC WEB Setup Instructions].  
+
+## Running These Examples
+To run these examples, you first need to clone this repo and then enter into this directory:
+
+```bash
+git clone git@github.com:eafigbo/okta_examples.git
+cd okta_examples
+```
+
+Then install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+Follow the instructions in each project'sREADME to run each example
