@@ -5,6 +5,7 @@ oauth_authorize_url = 'https://dev-xxx.okta.com/oauth2/v1/authorize'
 
 oauth_access_token_url = 'https://dev-xxx.okta.com/oauth2/v1/token'
 
+user_info_url = 'https://dev-xxx.okta.com/oauth2/v1/userinfo'
 
 api_url_base = 'https://dev-xxx.okta.com/'
 

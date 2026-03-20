@@ -8,7 +8,7 @@ It consists of the following examples:
 
 |Example                             |Description                 |
 |------------------------------------|----------------------------|
-|[oauth_4_okta](/oauth_4_okta)       |Tests autheticating with Okta and accessing APIs using the Oauth for Okta functionality|  
+|[oauth_4_okta](/oauth_4_okta)       |Tests authenticating with Okta and accessing APIs using the OAuth for Okta functionality|
 |[okta_api_access](/okta_api_access)   |An example for accessing and protecting APIs with Okta. Contains an client that accesses authenticates with Okta and access a dummy API Resource Server that is protected by Okta, can be used to test API Access protection with Okta|
 |[okta_api_integration](/okta_api_integration)| An example for Okta's API Service Integrations that allow you access Okta APIs using a service account|
 |[okta_widget_login](/okta_widget_login)| An example that tests adding authentication to your web app using the Okta's widget in redirect mode or embeded mode. This also tests the new propriety Interaction code flow| 
@@ -29,9 +29,11 @@ git clone git@github.com:eafigbo/okta_examples.git
 cd okta_examples
 ```
 
-Then install dependencies:
+Then create and activate a virtual environment and install dependencies:
 
 ```bash
+python3 -m venv env
+source env/bin/activate
 pip install -r requirements.txt
 ```
 Follow the instructions in each project's README to run each example

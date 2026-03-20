@@ -56,7 +56,7 @@ def is_logged_in():
         the_response += '<h3> ID Token </h3> '
         the_response += '<pre> '
         
-        data = api_request('https://dev-94568396.okta.com/oauth2/v1/userinfo')
+        data = api_request(client_config.user_info_url)
         the_response += str(data)
         #print("data in is_logged_in is:  ")
         #pp.pprint(str(data))
@@ -177,7 +177,7 @@ def get_users():
             #'sort': 'created',
             #'direction' : 'desc'
             }
-    profile = api_request(client_config.api_url_base + '/api/v1/users?' + urllib.parse.urlencode(params))
+    profile = api_request(client_config.api_url_base + 'api/v1/users?' + urllib.parse.urlencode(params))
     the_response = str(profile)
     
     if (request.args.get('action') == None):
@@ -213,7 +213,9 @@ def api_request(url, post = None , headers = [], ssws=None):
         headers += ['Authorization: Bearer '+session.get("access_token",None)]
     crl.setopt(crl.HTTPHEADER, headers)
     response = crl.perform_rs()
-    print('response from curl is : '+response)
+    print('response from curl is : ' + response)
+    if not response:
+        return {'error': 'empty response from server', 'url': url}
     return json.loads(response)
 
 

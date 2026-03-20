@@ -1,52 +1,69 @@
 
-# Example for accessing APIs and protecting APIs with Okta. 
+# Example for accessing and protecting APIs with Okta
+
+This example has two components that run simultaneously:
+
+- **Resource Server** (`okta_api_access.py`) — a Flask API on port 8000 that validates Okta access tokens on incoming requests
+- **Client** (`okta_client.py`) — a Flask web app on port 5000 that authenticates users with Okta and calls the Resource Server
+
 ## Prerequisites
 
 Before running these examples, see instructions in [okta_examples README](../README.md)
 
+You will need an Okta **Web (OIDC)** application — not a Service application. Service applications use the Client Credentials flow and cannot access the `/authorize` endpoint.
 
+Gather the following from the Okta Developer Console:
 
-Now you need to gather the following information from the Okta Developer Console that belongs to your web application:
-- **Client ID and Client Secret**  - The client ID and secret of the Web application that you created earlier. This identifies the application that tokens will be minted for.
-- To test the API access with SSWS token, you will need to create one using the instructions [here](https://developer.okta.com/docs/guides/create-an-api-token/)
-Copy the [`client_config.py.dist`](client_config.py.dist) to `client_config.py` and fill in the information you gathered as well as edit the other fields to suit your deployment scenario
+- **Client ID and Client Secret** — from the Web application you created. This identifies the application that tokens will be minted for.
+- **SSWS Token** — required to call the Okta `/api/v1/users` admin endpoint. Create one using the instructions [here](https://developer.okta.com/docs/guides/create-an-api-token/).
+
+## Okta Authorization Server Setup
+
+This example uses the `default` custom authorization server. You must add the following scope to it before running:
+
+1. Go to **Okta Admin Console → Security → API → Authorization Servers → default → Scopes**
+2. Add the scope `okta.myAccount.profile.manage`
+
+## Configuration
+
+Copy [`client_config.py.dist`](client_config.py.dist) to `client_config.py` and fill in your values:
 
 ```python
 api_server_client_id = "xxxxx"
 api_server_client_secret = "xxxxx"
-api_server_token_introspection_uri = "https://dev-xxxx.okta.com/oauth2/default/v1/introspect"
-api_server_issuer = "https://dev-xxxx.okta.com/oauth2/default"
-
-
+api_server_token_introspection_uri = "https://dev-xxx.okta.com/oauth2/default/v1/introspect"
+api_server_issuer = "https://dev-xxx.okta.com/oauth2/default"
 
 okta_client_id = 'xxx'
-okta_client_secret ='xxx'
+okta_client_secret = 'xxx'
 okta_ssws_token = 'xxx'
+okta_api_integration_secret = 'xx-xx-xxx'
 
 authorize_url = 'https://dev-xxx.okta.com/oauth2/default/v1/authorize'
 
 token_url = 'https://dev-xxx.okta.com/oauth2/default/v1/token'
 
-api_url_base = 'https://dev-xxxx.okta.com/'
+api_url_base = 'https://dev-xxx.okta.com/'
 
 base_url = 'http://localhost:5000/'
 
 resource_server_url = 'http://localhost:8000/'
 
-user_info_url='https://dev-xxx.okta.com/oauth2/default/v1/userinfo'
-
+user_info_url = 'https://dev-xxx.okta.com/oauth2/default/v1/userinfo'
 ```
 
-run the server by typing:
+## Running
 
-``` bash
-python3 okta_api_access.py 
+Open two terminal windows. In the first, start the Resource Server on port 8000:
+
+```bash
+python3 okta_api_access.py
 ```
 
-run the client by typing:
+In the second, start the Client on port 5000:
 
-``` bash
-python3 okta_client.py 
+```bash
+python3 okta_client.py
 ```
 
-Access the client application by going to : http://localhost:5000/
+Access the client application by going to: http://localhost:5000/
