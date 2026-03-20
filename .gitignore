@@ -2,6 +2,12 @@
 .scrappy
 client_config.py
 
+# macOS
+.DS_Store
+
+# Key files
+*.pem
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
